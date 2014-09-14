@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "drops",
+  "description": "Drop your notes anywhere on the web.",
+  "version": "0.1",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "index.chromeExtension.view.html"
+  },
+
+  "permissions": [
+    "https://secure.flickr.com/",
+    "http://localhost/*"
+  ]
+}
