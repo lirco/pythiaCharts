@@ -6,6 +6,12 @@
 var mongoose = require('mongoose'),
     _ = require('lodash');
 
+exports.chromeIndex = function(req, res) {
+  res.render('chromeIndex', {
+    user: req.user || null
+  });
+};
+
 /**
  * Create a Chromeextension
  */

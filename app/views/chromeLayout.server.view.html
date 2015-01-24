@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html data-ng-app="drops" data-ng-csp="">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>drops</title>
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/angular/angular-csp.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="ng-cloak">
+  <!--<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>  -->
+  <section class="content">
+    <section class="container">
+      {% block content %}{% endblock %}
+    </section>
+  </section>
+
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="application.js"></script>
+  <script src="controllers/mainController.js"></script>
+  <script type="text/javascript">
+    var user = {{ user | json | safe }};
+  </script>
+
+</body>
+</html>

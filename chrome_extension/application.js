@@ -1,20 +1,18 @@
-'use strict';
+angular.module('drops', ['ui.router'])
+  .config(function ($stateProvider) {
 
-//Start by defining the main module and adding the module dependencies
-angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfiguration.applicationModuleVendorDependencies);
+  $stateProvider
+    // simple state with template
+    .state('main', {
+      templateUrl: 'views/main/main.html',
+      controller: 'mainController',
+      controllerAs: 'mainCtrl'
+    })
 
-// Setting HTML5 Location Mode
-angular.module(ApplicationConfiguration.applicationModuleName).config(['$locationProvider',
-	function($locationProvider) {
-		$locationProvider.hashPrefix('!');
-	}
-]);
-
-//Then define the init function for starting up the application
-angular.element(document).ready(function() {
-	//Fixing facebook bug with redirect
-	if (window.location.hash === '#_=_') window.location.hash = '#!';
-
-	//Then init the app
-	angular.bootstrap(document, [ApplicationConfiguration.applicationModuleName]);
 });
+
+// use the $state service to navigate to specific state
+angular.module('drops')
+  .run(function ($state) {
+    $state.go('main');
+  });
