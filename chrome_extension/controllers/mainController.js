@@ -9,13 +9,14 @@
     })
       .then(function(response) {
         self.user = response.data.user;
+//        Authentication.initUser(self.user);
         self.message = response.data.message;
       })
       .then(function(){
         if (self.user !==null) {
           state.go('home')
         } else {
-          state.go('signin')
+          state.go('signIn')
         }
       })
   }

@@ -10,11 +10,19 @@ angular.module('drops', ['ui.router'])
     })
 
     .state('home', {
-      templateUrl: 'views/home/home.html'
+      templateUrl: 'views/home/home.chrome.viewhtml'
     })
 
-    .state('signin', {
-      templateUrl: 'views/user/signin.html'
+    .state('signIn', {
+      templateUrl: 'views/users/authentication/signIn.chrome.view.html',
+//      controller: 'authenticationController',
+//      controllerAs: 'authenticationCtrl'
+    })
+
+    .state('signup', {
+      templateUrl: 'views/users/authentication/signUp.chrome.view.html',
+//      controller: 'authenticationController',
+//      controllerAs: 'authenticationCtrl'
     })
 
 });
