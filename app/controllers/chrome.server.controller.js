@@ -7,9 +7,19 @@ var mongoose = require('mongoose'),
     _ = require('lodash');
 
 exports.chromeIndex = function(req, res) {
-  res.render('chromeIndex', {
-    user: req.user || null
-  });
+  if (req.user && req.user!==null) {
+    res.send({
+      user: req.user
+      //here I should also send the notes on current user's url
+    });
+  } else {
+    res.send({
+      user: null,
+      message: 'no user'
+    })
+  }
+
+
 };
 
 /**
@@ -45,23 +55,4 @@ exports.delete = function(req, res) {
  */
 exports.list = function(req, res) {
 
-};
-
-
-//exports.load = function(req, res) {
-//  res.send('some html yo yo yo ');
-//};
-
-//exports.load = function(req, res) {
-//  res.render('index', {
-//    user: req.user || null
-//  });
-//};
-
-//exports.load = function(req, res) {
-//  res.redirect('http://www.google.com')
-//};
-
-exports.load = function(req, res) {
-  res.redirect('/')
 };
