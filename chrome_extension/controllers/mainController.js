@@ -1,6 +1,6 @@
 (function () {
 
-  function mainController(http) {
+  function mainController(http, state) {
     var self = this;
     self.hello = "hello drops";
     http({
@@ -11,9 +11,16 @@
         self.user = response.data.user;
         self.message = response.data.message;
       })
+      .then(function(){
+        if (self.user !==null) {
+          state.go('home')
+        } else {
+          state.go('signin')
+        }
+      })
   }
 
   angular.module('drops')
-    .controller('mainController', ['$http', mainController])
+    .controller('mainController', ['$http', '$state', mainController])
 
 }());

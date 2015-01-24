@@ -9,6 +9,14 @@ angular.module('drops', ['ui.router'])
       controllerAs: 'mainCtrl'
     })
 
+    .state('home', {
+      templateUrl: 'views/home/home.html'
+    })
+
+    .state('signin', {
+      templateUrl: 'views/user/signin.html'
+    })
+
 });
 
 // use the $state service to navigate to specific state
