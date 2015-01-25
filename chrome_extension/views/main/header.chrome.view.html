@@ -1,0 +1,7 @@
+<div class="container" data-ng-controller="HeaderController as headerCtrl">
+    <ul class="nav navbar-nav" data-ng-hide="headerCtrl.authentication.user">
+      <li>
+        <a ng-click="headerCtrl.signOut()">Signout</a>
+      </li>
+    </ul>
+</div>

@@ -9,12 +9,18 @@
 </head>
 
 <body>
-  <ui-view></ui-view>
+  <header data-ng-include="'views/main/header.chrome.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+  <section class="content">
+    <section class="container">
+      <ui-view></ui-view>
+    </section>
+  </section>
   <script src="lib/angular/angular.min.js"></script>
   <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="application.js"></script>
   <script src="views/main/mainController.js"></script>
   <script src="views/users/authentication/authentication.chrome.controller.js"></script>
+  <script src="views/main/header.chrome.controller.js"></script>
   <script src="services/authentication.chrome.service.js"></script>
 </body>
 </html>
