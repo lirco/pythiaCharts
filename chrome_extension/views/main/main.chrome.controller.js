@@ -14,9 +14,11 @@
       })
       .then(function(){
         if (self.authentication.user !==null) {
-          state.go('home')
+          state.go('home');
+          scope.$apply()
         } else {
-          state.go('signIn')
+          state.go('signIn');
+          scope.$apply()
         }
       })
   }

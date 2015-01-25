@@ -13,10 +13,10 @@ angular.module('drops', ['ui.router'])
       controllerAs: 'authCtrl'
     })
 
-    .state('signup', {
-      templateUrl: 'views/users/authentication/signUp.chrome.view.html'
-//      controller: 'authenticationController',
-//      controllerAs: 'authenticationCtrl'
+    .state('signUp', {
+      templateUrl: 'views/users/authentication/signUp.chrome.view.html',
+      controller: 'authenticationController',
+      controllerAs: 'authCtrl'
     })
 
 });
