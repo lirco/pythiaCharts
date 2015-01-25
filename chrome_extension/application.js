@@ -15,8 +15,8 @@ angular.module('drops', ['ui.router'])
 
     .state('signIn', {
       templateUrl: 'views/users/authentication/signIn.chrome.view.html',
-//      controller: 'authenticationController',
-//      controllerAs: 'authCtrl'
+      controller: 'authenticationController',
+      controllerAs: 'authCtrl'
     })
 
     .state('signup', {
