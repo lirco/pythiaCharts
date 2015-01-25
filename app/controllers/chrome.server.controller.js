@@ -14,8 +14,7 @@ exports.chromeIndex = function(req, res) {
     });
   } else {
     res.send({
-      user: null,
-      message: 'no user'
+      user: null
     })
   }
 

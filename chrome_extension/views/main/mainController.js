@@ -1,6 +1,6 @@
 (function () {
 
-  function mainController(http, state) {
+  function mainController(http, state, Authentication) {
     var self = this;
     self.hello = "hello drops";
     http({
@@ -8,9 +8,8 @@
       url:'http://localhost:3000/chromeIndex'
     })
       .then(function(response) {
-        self.user = response.data.user;
-//        Authentication.initUser(self.user);
-        self.message = response.data.message;
+        Authentication.setUser(response.data.user);
+        self.user = Authentication.getUser()
       })
       .then(function(){
         if (self.user !==null) {
@@ -22,6 +21,6 @@
   }
 
   angular.module('drops')
-    .controller('mainController', ['$http', '$state', mainController])
+    .controller('mainController', ['$http', '$state', 'Authentication', mainController])
 
 }());
