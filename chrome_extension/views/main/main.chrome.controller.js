@@ -1,18 +1,19 @@
 (function () {
 
-  function mainController(http, state, Authentication) {
+  function mainController(scope, http, state, Authentication) {
     var self = this;
-    self.hello = "hello drops";
+    self.authentication = {};
+
     http({
       method:'get',
       url:'http://localhost:3000/chromeIndex'
     })
       .then(function(response) {
         Authentication.setUser(response.data.user);
-        self.user = Authentication.getUser()
+        self.authentication.user = Authentication.getUser()
       })
       .then(function(){
-        if (self.user !==null) {
+        if (self.authentication.user !==null) {
           state.go('home')
         } else {
           state.go('signIn')
@@ -21,6 +22,6 @@
   }
 
   angular.module('drops')
-    .controller('mainController', ['$http', '$state', 'Authentication', mainController])
+    .controller('mainController', ['$scope', '$http', '$state', 'Authentication', mainController])
 
 }());
