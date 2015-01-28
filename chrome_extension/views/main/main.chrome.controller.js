@@ -1,10 +1,10 @@
 (function () {
 
-  function mainController(scope, http, state, Authentication) {
+  function mainController($scope, $http, $state, Authentication) {
     var self = this;
     self.authentication = {};
 
-    http({
+    $http({
       method:'get',
       url:'http://localhost:3000/chromeIndex'
     })
@@ -14,11 +14,9 @@
       })
       .then(function(){
         if (self.authentication.user !==null) {
-          state.go('home');
-          scope.$apply()
+          $state.go('home');
         } else {
-          state.go('signIn');
-          scope.$apply()
+          $state.go('signIn');
         }
       })
   }

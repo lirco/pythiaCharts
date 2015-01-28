@@ -2,7 +2,7 @@
 
 (function () {
 
-  function HeaderController(http, state, Authentication) {
+  function HeaderController($http, $state, Authentication) {
 
     var self = this;
     self.authentication = {};
@@ -10,7 +10,7 @@
     self.authentication.user = Authentication.getUser();
 
     self.signOut = function() {
-      http({
+      $http({
         method:'get',
         url:'http://localhost:3000/auth/signout'
       })
@@ -18,7 +18,7 @@
           Authentication.removeUser();
         })
         .then(function(){
-          state.go('signIn');
+          $state.go('signIn');
         });
     }
   }
