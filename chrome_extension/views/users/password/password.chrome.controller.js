@@ -18,7 +18,7 @@
     self.askForPasswordReset = function() {
       self.success = self.error = null;
 
-      $http.post('/auth/forgot', self.credentials)
+      $http.post('http://localhost:3000/auth/forgot', self.credentials)
         .success(function(response) {
           // Show user success message and clear form
           self.credentials = null;
