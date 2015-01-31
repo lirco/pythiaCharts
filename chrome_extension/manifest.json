@@ -4,6 +4,7 @@
   "description": "Drop your notes anywhere",
   "version": "0.1",
   "permissions": [
+    "tabs",
     "http://*/",
     "http://localhost:3000/*"
   ],

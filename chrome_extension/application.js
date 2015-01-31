@@ -4,7 +4,19 @@ angular.module('drops', ['ui.router'])
   $stateProvider
 
     .state('home', {
-      templateUrl: 'views/home/home.chrome.view.html'
+      templateUrl: 'views/home/home.chrome.view.html',
+      controller: 'homeController',
+      controllerAs: 'homeCtrl'
+    })
+    .state('newNote', {
+      templateUrl: 'views/notes/newNote.chrome.view.html'
+      //controller: 'notesController',
+      //controllerAs: 'notesCtrl'
+    })
+    .state('editNote', {
+      templateUrl: 'views/notes/editNote.chrome.view.html',
+      controller: 'notesController',
+      controllerAs: 'notesCtrl'
     })
 
     //User routes

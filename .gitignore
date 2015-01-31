@@ -8,3 +8,6 @@ chrome_extension/lib/
 app/tests/coverage/
 .bower-*/
 .idea/
+server.js
+
+app/controllers/users/users.password.server.controller.js
