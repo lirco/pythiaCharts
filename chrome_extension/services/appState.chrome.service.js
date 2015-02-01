@@ -6,14 +6,10 @@
     self.activeNote = {};
     self.activeTabUrl = '';
 
+    //This will not call until the service is called. So, it has to be in a Provider and added to app's config
     chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': true}, function (tabs) {
       self.activeTabUrl = tabs[0].url;
     });
-
-    console.log('***************************************');
-    console.log(self.activeTabUrl);
-    console.log('***************************************');
-
 
     //self.notesForThisUrl = [];
 
