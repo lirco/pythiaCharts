@@ -1,27 +1,37 @@
 (function () {
 
-  function mainController($scope, $http, $state, Authentication) {
+  function mainController($http, $state, Authentication, AppState) {
+
     var self = this;
     self.authentication = {};
 
-    $http({
-      method:'get',
-      url:'http://localhost:3000/chromeIndex'
-    })
-      .then(function(response) {
-        Authentication.setUser(response.data.user);
-        self.authentication.user = Authentication.getUser()
+    self.activeTabUrl = '';
+
+    chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': true}, function (tabs) {
+
+      self.activeTabUrl = tabs[0].url;
+      AppState.setActiveTabUrl(tabs[0].url);
+
+      $http({
+        method:'get',
+        url:'http://localhost:3000/chromeIndex'
       })
-      .then(function(){
-        if (self.authentication.user !==null) {
-          $state.go('home');
-        } else {
-          $state.go('signIn');
-        }
-      })
+        .then(function(response) {
+          Authentication.setUser(response.data.user);
+          self.authentication.user = Authentication.getUser()
+        })
+        .then(function(){
+          if (self.authentication.user !==null) {
+            $state.go('home');
+          } else {
+            $state.go('signIn');
+          }
+        })
+    });
+
   }
 
   angular.module('drops')
-    .controller('mainController', ['$scope', '$http', '$state', 'Authentication', mainController])
+    .controller('mainController', ['$http', '$state', 'Authentication','AppState', mainController])
 
 }());

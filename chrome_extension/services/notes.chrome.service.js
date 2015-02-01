@@ -3,7 +3,7 @@
 (function () {
 
   function notesService($resource) {
-    return $resource('notes/:noteId', {
+    return $resource('http://localhost:3000/notes/:noteId', {
       noteId: '@_id'
     }, {
       update: {
