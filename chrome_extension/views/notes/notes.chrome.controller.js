@@ -66,6 +66,6 @@
   }
 
   angular.module('drops')
-    .controller('notesController', ['$stateParams', 'state', 'Authentication', 'Notes', notesController])
+    .controller('notesController', ['$stateParams', '$state', 'Authentication', 'Notes', notesController])
 
 }());

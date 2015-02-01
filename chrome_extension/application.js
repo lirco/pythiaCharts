@@ -1,4 +1,4 @@
-angular.module('drops', ['ui.router'])
+angular.module('drops', ['ui.router', 'ngResource'])
   .config(function ($stateProvider) {
 
   $stateProvider
@@ -9,9 +9,9 @@ angular.module('drops', ['ui.router'])
       controllerAs: 'homeCtrl'
     })
     .state('newNote', {
-      templateUrl: 'views/notes/newNote.chrome.view.html'
-      //controller: 'notesController',
-      //controllerAs: 'notesCtrl'
+      templateUrl: 'views/notes/newNote.chrome.view.html',
+      controller: 'notesController',
+      controllerAs: 'notesCtrl'
     })
     .state('editNote', {
       templateUrl: 'views/notes/editNote.chrome.view.html',
