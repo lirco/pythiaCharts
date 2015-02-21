@@ -5,9 +5,7 @@
     var self = this;
     self.activeNote = {};
     self.activeTabUrl = '';
-
-
-    //self.notesForThisUrl = [];
+    self.activeTabDomain = '';
 
     return {
       setActiveTabUrl: function(url) {
@@ -15,6 +13,12 @@
       },
       getActiveTabUrl: function() {
         return self.activeTabUrl;
+      },
+      setActiveTabDomain: function(domain) {
+        self.activeTabDomain = domain;
+      },
+      getActiveTabDomain: function() {
+        return self.activeTabDomain;
       },
       setActiveNote: function(note) {
         self.activeNote = note

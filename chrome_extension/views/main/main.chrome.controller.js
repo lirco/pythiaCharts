@@ -9,8 +9,15 @@
 
     chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': true}, function (tabs) {
 
-      self.activeTabUrl = tabs[0].url;
-      AppState.setActiveTabUrl(tabs[0].url);
+      var uri = tabs[0].url;
+      var domain = uri.match(/^[\w-]+:\/*\[?([\w\.:-]+)\]?(?::\d+)?/)[1].split(".").splice(1).join('.');
+      self.activeTabUrl = uri;
+      AppState.setActiveTabUrl(uri);
+      AppState.setActiveTabDomain(domain);
+
+      console.log('***************************************');
+      console.log(uri.match(/^[\w-]+:\/*\[?([\w\.:-]+)\]?(?::\d+)?/)[1].split(".").splice(1).join('.'));
+      console.log('***************************************');
 
       $http({
         method:'get',

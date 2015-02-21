@@ -75,6 +75,9 @@ var UserSchema = new Schema({
 		}],
 		default: ['user']
 	},
+  tags: {
+    type: Array
+  },
 	updated: {
 		type: Date
 	},

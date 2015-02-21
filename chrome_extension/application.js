@@ -10,6 +10,9 @@ angular.module('drops', ['ui.router', 'ngResource'])
       resolve: {
         activeTabUrl: function(AppState) {
           return AppState.getActiveTabUrl()
+        },
+        activeTabDomain: function(AppState) {
+          return AppState.getActiveTabDomain()
         }
       }
     })
@@ -20,6 +23,9 @@ angular.module('drops', ['ui.router', 'ngResource'])
       resolve: {
         activeTabUrl: function(AppState) {
           return AppState.getActiveTabUrl()
+        },
+        activeTabDomain: function(AppState) {
+          return AppState.getActiveTabDomain()
         }
       }
     })

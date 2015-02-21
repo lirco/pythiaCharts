@@ -32,14 +32,19 @@ var NoteSchema = new Schema({
     default: '',
     trim: true
   },
+  user: {
+    type: Schema.ObjectId,
+    ref: 'User'
+  },
   url: {
     type: String,
     default: '',
     trim: true
   },
-  user: {
-    type: Schema.ObjectId,
-    ref: 'User'
+  domain: {
+    type: String,
+    default: '',
+    trim: true
   }
 });
 
