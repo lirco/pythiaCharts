@@ -73,15 +73,16 @@ exports.delete = function(req, res) {
  * List of Articles
  */
 exports.list = function(req, res) {
-  Note.find().sort('-created').populate('user', 'displayName').exec(function(err, articles) {
+  Note.find({domain: req.query.domain}).sort('-created').populate('user', 'displayName').exec(function(err, notes) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(articles);
+      res.jsonp(notes);
     }
   });
+
 };
 
 /**

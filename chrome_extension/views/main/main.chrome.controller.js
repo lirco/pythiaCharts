@@ -15,10 +15,6 @@
       AppState.setActiveTabUrl(uri);
       AppState.setActiveTabDomain(domain);
 
-      console.log('***************************************');
-      console.log(uri.match(/^[\w-]+:\/*\[?([\w\.:-]+)\]?(?::\d+)?/)[1].split(".").splice(1).join('.'));
-      console.log('***************************************');
-
       $http({
         method:'get',
         url:'http://localhost:3000/chromeIndex'

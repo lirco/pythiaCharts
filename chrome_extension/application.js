@@ -13,6 +13,9 @@ angular.module('drops', ['ui.router', 'ngResource'])
         },
         activeTabDomain: function(AppState) {
           return AppState.getActiveTabDomain()
+        },
+        domainNotes: function(Notes, AppState){
+          return  Notes.getNotes({domain: AppState.getActiveTabDomain()})
         }
       }
     })

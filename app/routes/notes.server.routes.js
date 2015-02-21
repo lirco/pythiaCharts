@@ -19,4 +19,5 @@ module.exports = function(app) {
 
   // Finish by binding the note middleware
   app.param('noteId', notes.noteByID);
+
 };

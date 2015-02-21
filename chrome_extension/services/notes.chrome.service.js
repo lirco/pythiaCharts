@@ -8,6 +8,11 @@
     }, {
       update: {
         method: 'PUT'
+      },
+      //custom method, gets url/domain parameters from controller for later querying on server
+      getNotes: {
+        method: 'GET',
+        isArray: true
       }
     });
   }
