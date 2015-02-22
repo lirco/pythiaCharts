@@ -73,16 +73,27 @@ exports.delete = function(req, res) {
  * List of Articles
  */
 exports.list = function(req, res) {
-  Note.find({domain: req.query.domain}).sort('-created').populate('user', 'displayName').exec(function(err, notes) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    } else {
-      res.jsonp(notes);
-    }
-  });
+  function findNotes(qKey, qValue) {
+    var query = {};
+    query[qKey] = qValue;
+    Note.find(query).sort('-created').populate('user', 'displayName').exec(function(err, notes) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        res.jsonp(notes);
+      }
+    });
+  }
+  if (req.query.domain) {
+    findNotes('domain', req.query.domain)
+  } else if (req.query.tags) {
+    findNotes('tags', req.query.tags)
+  } else {
+    findNotes(null, null)
 
+  }
 };
 
 /**
