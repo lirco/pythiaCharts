@@ -5,7 +5,7 @@ angular.module('drops', ['ui.router', 'ngResource'])
     '$stateProvider',
 
     function ($resourceProvider, $stateProvider) {
-      
+
     // Don't strip trailing slashes from calculated URLs
     $resourceProvider.defaults.stripTrailingSlashes = false;
 
@@ -22,9 +22,6 @@ angular.module('drops', ['ui.router', 'ngResource'])
           },
           activeTabDomain: function(AppState) {
             return AppState.getActiveTabDomain()
-          },
-          domainNotes: function(Notes, AppState){
-            return  Notes.getNotes({domain: AppState.getActiveTabDomain()})
           }
         }
       })

@@ -61,7 +61,7 @@
 
     self.findOne = function() {
       self.note = Notes.get({
-        noteId: $stateParams.articleId
+        noteId: $stateParams.noteId
       });
     };
 
