@@ -6,8 +6,17 @@
 
     var self = this;
     self.authentication = {};
-
     self.authentication.user = Authentication.getUser();
+
+    self.status = {
+      isopen: false
+    };
+
+    self.toggleDropdown = function($event) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      self.status.isopen = !self.status.isopen;
+    };
 
     self.signOut = function() {
       $http({
