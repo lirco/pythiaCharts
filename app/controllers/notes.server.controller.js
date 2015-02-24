@@ -73,9 +73,11 @@ exports.delete = function(req, res) {
  * List of Articles
  */
 exports.list = function(req, res) {
+  //finds notes for a specific user, acc. to domain/tags delivered
   function findNotes(qKey, qValue) {
     var query = {};
     query[qKey] = qValue;
+    query['user'] = req.user._id;
     Note.find(query).sort('-created').populate('user', 'displayName').exec(function(err, notes) {
       if (err) {
         return res.status(400).send({
@@ -87,11 +89,11 @@ exports.list = function(req, res) {
     });
   }
   if (req.query.domain) {
-    findNotes('domain', req.query.domain)
+    findNotes('domain', req.query.domain);
   } else if (req.query.tags) {
-    findNotes('tags', req.query.tags)
+    findNotes('tags', req.query.tags);
   } else {
-    findNotes(null, null)
+    findNotes(null, null);
 
   }
 };
