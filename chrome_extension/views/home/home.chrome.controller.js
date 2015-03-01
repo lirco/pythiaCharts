@@ -6,15 +6,23 @@
     var self = this;
     self.authentication = {};
     self.authentication.user = Authentication.getUser();
+    //TODO: move this to config page
     self.viewState = 'Page';
 
     $scope.$on('viewEvent:changeViewState', function(event, type){
       self.viewState = type;
+      if (self.viewState == 'Page' ){
+        self.notesToShow = self.urlNotes;
+      } else if (self.viewState == 'Site') {
+        self.notesToShow = self.domainNotes;
+      }
     });
 
     self.urlNotes = [];
+    self.domainNotes = [];
 
     Notes.getNotes({domain: activeTabDomain}, function(notes) {
+      self.domainNotes = notes;
       for (var i=0; i < notes.length; i++) {
         var note = notes[i];
         if (note.url == activeTabUrl) {
