@@ -31,6 +31,8 @@
       }
     });
 
+    self.notesToShow = self.urlNotes;
+
   }
 
   angular.module('drops')
