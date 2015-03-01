@@ -2,11 +2,15 @@
 
 (function () {
 
-  function HeaderController($http, $state, Authentication) {
+  function HeaderController($scope, $http, $state, Authentication, AppState) {
 
     var self = this;
     self.authentication = {};
     self.authentication.user = Authentication.getUser();
+
+    self.stateChange = function(state) {
+      $scope.$emit('dropsAppEvent','viewEvent:changeViewState', state);
+    };
 
     self.status = {
       isopen: false
@@ -33,6 +37,6 @@
   }
 
   angular.module('drops')
-    .controller('HeaderController', ['$http', '$state', 'Authentication', HeaderController])
+    .controller('HeaderController', ['$scope', '$http', '$state', 'Authentication', 'AppState', HeaderController])
 
 }());

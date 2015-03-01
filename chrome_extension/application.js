@@ -7,7 +7,7 @@ angular.module('drops', ['ui.router', 'ngResource', 'ui.bootstrap'])
     function ($resourceProvider, $stateProvider) {
 
     // Don't strip trailing slashes from calculated URLs
-    $resourceProvider.defaults.stripTrailingSlashes = false;
+    //$resourceProvider.defaults.stripTrailingSlashes = false;
 
 
     $stateProvider

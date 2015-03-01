@@ -2,6 +2,7 @@
   <div>
     <h3>No notes yet for this page</h3>
     <a ui-sref="newNote">Leave one</a>
+    <p>The view state is {{homeCtrl.viewState}}</p>
     <div ng-repeat="note in homeCtrl.urlNotes">
       <li>{{note.title}}</li>
     </div>

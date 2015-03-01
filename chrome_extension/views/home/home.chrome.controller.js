@@ -2,10 +2,15 @@
 
 (function () {
 
-  function homeController(Notes, Authentication, activeTabUrl, activeTabDomain) {
+  function homeController($scope, Notes, Authentication, activeTabUrl, activeTabDomain) {
     var self = this;
     self.authentication = {};
     self.authentication.user = Authentication.getUser();
+    self.viewState = 'Page';
+
+    $scope.$on('viewEvent:changeViewState', function(event, type){
+      self.viewState = type;
+    });
 
     self.urlNotes = [];
 
@@ -21,6 +26,6 @@
   }
 
   angular.module('drops')
-    .controller('homeController', ['Notes', 'Authentication', 'activeTabUrl', 'activeTabDomain', homeController])
+    .controller('homeController', ['$scope', 'Notes', 'Authentication', 'activeTabUrl', 'activeTabDomain', homeController])
 
 }());
