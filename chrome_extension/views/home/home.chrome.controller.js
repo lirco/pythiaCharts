@@ -9,8 +9,8 @@
     //TODO: move this to config page
     self.viewState = 'Page';
 
-    $scope.$on('viewEvent:changeViewState', function(event, type){
-      self.viewState = type;
+    $scope.$on('viewEvent:changeViewState', function(type, data){
+      self.viewState = data;
       if (self.viewState == 'Page' ){
         self.notesToShow = self.urlNotes;
       } else if (self.viewState == 'Site') {
