@@ -31,7 +31,16 @@
       }
     });
 
+    //TODO: move this to config page
     self.notesToShow = self.urlNotes;
+
+    self.hasNotes = self.domainNotes.length!==0 && self.urlNotes!==0;
+    console.log('***************************************');
+    console.log(self.hasNotes);
+    console.log(self.domainNotes.length);
+    console.log(self.urlNotes.length);
+    console.log('***************************************');
+
 
   }
 

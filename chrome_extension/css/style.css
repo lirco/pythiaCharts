@@ -4,6 +4,7 @@ body {
   height: 500px;
 }
 
+/* navbar begins */
 .navbar{
   height:46px;
 }
@@ -23,17 +24,122 @@ body {
   float: right!important;
 }
 
-/*.glyphicon.glyphicon-cog {*/
-  /*font-size: 20px;*/
-/*}*/
-/*.glyphicon.glyphicon-home {*/
-  /*font-size: 20px;*/
-/*}*/
-
 .navbar-nav .open .dropdown-menu {
   background-color: #ffffff;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
   background-color: transparent;
+}
+/* navbar ends */
+
+/*popup begins*/
+.popup-content {
+  width: inherit;
+  height: inherit;
+}
+
+.popup-container {
+  width: inherit;
+  height: inherit;
+  padding: 10px 15px;
+}
+
+.popup-title {
+  display: inline-block;
+  width: inherit;
+  height: 40px;
+  color: #333333;
+}
+
+.column-9p {
+  width: 90%;
+  float: left;
+  text-align: left;
+}
+
+.column-1p {
+  width: 10%;
+  float: right;
+  text-align: right;
+}
+
+.note-add {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  border: 3px solid #b45f06;
+  color: #b45f06;
+  padding: 5px;
+}
+
+.note-add .glyphicon {
+  color: #b45f06;
+  font-size: 20px;
+  align-self: center;
+}
+
+
+.ds {
+  background: #ffffff;
+  padding-top: 20px;
+}
+
+.ds h4 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ds h3 {
+  color: #ffffff;
+  font-size: 16px;
+  padding: 0 10px;
+  line-height: 60px;
+  height: 60px;
+  margin: 0;
+  background: #ff865c;
+  text-align: center;
+}
+
+.ds i {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.ds .desc {
+  border-bottom: 1px solid #eaeaea;
+  display: inline-block;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.ds .desc:hover {
+  background: #f2f2f2;
+}
+
+.ds .thumb {
+  width: 30px;
+  margin: 0 10px 0 20px;
+  display: block;
+  float: left;
+}
+
+.ds .details {
+  width: 170px;
+  float: left;
+}
+
+.ds > .desc p {
+  font-size: 11px;
+}
+
+.ds p > muted {
+  font-size: 9px;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #666666
+}
+
+.ds a {
+  color: #68dff0;
 }
