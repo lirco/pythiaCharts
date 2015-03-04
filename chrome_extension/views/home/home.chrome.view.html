@@ -2,16 +2,13 @@
 
 
   <div class="col-lg-3 ds">
-    <div class="desc">
-      <div class="thumb-right">
-        <a ui-sref="newNote" type="button" role="button">
-          <span class="glyphicon glyphicon-plus pull-right"></span>
-        </a>
-      </div>
-      <div class="details">
-        <h3>FUCK ME</h3>
-      </div>
-    </div>
+    <h3 ng-if="homeCtrl.urlNotes.length !== 0">Your notes</h3>
+    <h3 ng-if="homeCtrl.urlNotes.length == 0">No notes yet for this page. </h3>
+    <!--<div class="thumb-right">-->
+      <!--<a ui-sref="newNote" type="button" role="button">-->
+        <!--<span class="glyphicon glyphicon-plus pull-right"></span>-->
+      <!--</a>-->
+    <!--</div>-->
 
     <div ng-repeat="note in homeCtrl.notesToShow">
       <div class="desc">
@@ -19,8 +16,8 @@
           <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
         </div>
         <div class="details">
-          <p><muted>{{note.title}}</muted><br/>
-            <a href="#">James Brown</a> {{note.content}}<br/>
+          <p><a href="#">{{note.title}}</a> <br/>
+            {{note.content}}<br/>
           </p>
         </div>
       </div>
