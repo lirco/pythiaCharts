@@ -35,13 +35,27 @@ angular.module('drops', ['ui.router', 'ngResource', 'ui.bootstrap'])
           },
           activeTabDomain: function(AppState) {
             return AppState.getActiveTabDomain()
+          },
+          activeNote: function(AppState) {
+            return AppState.getActiveNote()
           }
         }
       })
       .state('editNote', {
         templateUrl: 'views/notes/editNote.chrome.view.html',
         controller: 'notesController',
-        controllerAs: 'notesCtrl'
+        controllerAs: 'notesCtrl',
+        resolve: {
+          activeTabUrl: function(AppState) {
+            return AppState.getActiveTabUrl()
+          },
+          activeTabDomain: function(AppState) {
+            return AppState.getActiveTabDomain()
+          },
+          activeNote: function(AppState) {
+            return AppState.getActiveNote()
+          }
+        }
       })
 
       //User routes

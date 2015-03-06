@@ -2,18 +2,23 @@
 
 
   <div class="col-lg-3 ds">
-    <h3 ng-if="homeCtrl.urlNotes.length !== 0">Your notes</h3>
-    <h3 ng-if="homeCtrl.urlNotes.length == 0">No notes yet for this page. </h3>
-    <!--<div class="thumb-right">-->
-      <!--<a ui-sref="newNote" type="button" role="button">-->
-        <!--<span class="glyphicon glyphicon-plus pull-right"></span>-->
-      <!--</a>-->
-    <!--</div>-->
+    <h3 ng-if="homeCtrl.notesToShow.length !== 0">Your notes</h3>
+    <h3 ng-if="homeCtrl.notesToShow.length == 0">No notes yet for this page. </h3>
+    <a ui-sref="newNote" type="button" role="button">
+      <span class="glyphicon glyphicon-plus"></span>
+    </a>
 
     <div ng-repeat="note in homeCtrl.notesToShow">
       <div class="desc">
         <div class="thumb">
-          <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+          <a ng-click="homeCtrl.editNote(note)" type="button" role="button">
+            <span class="glyphicon glyphicon-edit"></span>
+          </a>
+        </div> <br/>
+        <div class="thumb">
+          <a ng-click="homeCtrl.deleteNote(note)" type="button" role="button">
+            <span class="glyphicon glyphicon-trash"></span>
+          </a>
         </div>
         <div class="details">
           <p><a href="#">{{note.title}}</a> <br/>

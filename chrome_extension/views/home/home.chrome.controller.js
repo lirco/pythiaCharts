@@ -2,7 +2,7 @@
 
 (function () {
 
-  function homeController($scope, Notes, Authentication, activeTabUrl, activeTabDomain) {
+  function homeController($scope, $state, Notes, Authentication, AppState, activeTabUrl, activeTabDomain) {
     var self = this;
     self.authentication = {};
     self.authentication.user = Authentication.getUser();
@@ -31,12 +31,17 @@
       }
     });
 
+    self.editNote = function(note) {
+      AppState.setActiveNote(note);
+      $state.go('editNote')
+    };
+
     //TODO: move this to config page
     self.notesToShow = self.urlNotes;
 
   }
 
   angular.module('drops')
-    .controller('homeController', ['$scope', 'Notes', 'Authentication', 'activeTabUrl', 'activeTabDomain', homeController])
+    .controller('homeController', ['$scope','$state', 'Notes', 'Authentication','AppState' , 'activeTabUrl', 'activeTabDomain', homeController])
 
 }());
