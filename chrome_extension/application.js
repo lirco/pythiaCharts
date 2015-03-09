@@ -17,22 +17,10 @@ angular.module('drops', ['ui.router', 'ngResource', 'ui.bootstrap'])
         controller: 'homeController',
         controllerAs: 'homeCtrl',
         resolve: {
-          domainNotes: function(GetNotes) {
-            console.log('************************************');
-            console.log(GetNotes.getDomainNotes());
-            console.log('************************************');
-            return GetNotes.getDomainNotes()
-          },
-          urlNotes: function(GetNotes) {
-            console.log('************************************');
-            console.log(GetNotes.getUrlNotes());
-            console.log('************************************');
-            return GetNotes.getUrlNotes()
+          notes: function(GetNotes) {
+            return GetNotes.getNotes()
           },
           viewState: function(AppState) {
-            console.log('************************************');
-            console.log(AppState.getViewState());
-            console.log('************************************');
             return AppState.getViewState()
           }
         }

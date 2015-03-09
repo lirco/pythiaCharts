@@ -2,14 +2,14 @@
 
 (function () {
 
-  function homeController($scope, $state, Authentication, AppState, domainNotes, urlNotes, viewState) {
+  function homeController($scope, $state, Authentication, AppState, notes, viewState) {
     var self = this;
     self.authentication = {};
     self.authentication.user = Authentication.getUser();
 
     self.viewState = viewState;
-    self.domainNotes = domainNotes;
-    self.urlNotes = urlNotes;
+    self.domainNotes = notes.domainNotes;
+    self.urlNotes = notes.urlNotes;
 
     self.switchViewState = function(viewState){
       AppState.setViewState(viewState);
@@ -58,6 +58,6 @@
   }
 
   angular.module('drops')
-    .controller('homeController', ['$scope','$state','Authentication','AppState','domainNotes', 'urlNotes', 'viewState', homeController])
+    .controller('homeController', ['$scope','$state','Authentication','AppState','notes', 'viewState', homeController])
 
 }());

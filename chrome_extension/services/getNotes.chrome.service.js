@@ -2,41 +2,36 @@
 
   function getNotes($q, Notes, AppState) {
 
-    var dDomain = $q.defer();
-    var dUrl = $q.defer();
-
     var self = this;
-    self.domainNotes = [];
-    self.urlNotes = [];
-
-    Notes.getNotes({domain: AppState.getActiveTabDomain()}, function(notes) {
-      dDomain.resolve(notes);
-      self.domainNotes = notes;
-      self.generateUrlNotes(notes)
-    });
-
-    self.generateUrlNotes = function(domainNotes) {
-      self.urlNotes = [];
-      for (var i=0; i < domainNotes.length; i++) {
-        var note = domainNotes[i];
-        if (note.url == AppState.getActiveTabUrl()) {
-          self.urlNotes.push(note);
-        }
-      }
-      dUrl.resolve(self.urlNotes);
+    self.notes = {
+      domainNotes: [],
+      urlNotes: []
     };
 
-    return {
-      getDomainNotes: function() {
-        return dDomain.promise;
-      },
-      getUrlNotes: function() {
-        return dUrl.promise;
-      }
+    function getNotes() {
+      var d = $q.defer();
+      Notes.getNotes({domain: AppState.getActiveTabDomain()}, function(response) {
+        self.notes.domainNotes = response;
+
+        self.notes.urlNotes = [];
+        for (var i=0; i < response.length; i++) {
+          var note = response[i];
+          if (note.url == AppState.getActiveTabUrl()) {
+            self.notes.urlNotes.push(note);
+          }
+        }
+        d.resolve(self.notes)
+      });
+      return d.promise;
     }
 
+    return {
+      getNotes: getNotes
+    }
   }
 
+
+
   angular.module('drops')
-    .factory('GetNotes', ['$q','Notes','AppState', getNotes])
+    .service('GetNotes', ['$q','Notes','AppState', getNotes])
 }());
