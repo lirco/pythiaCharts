@@ -17,11 +17,23 @@ angular.module('drops', ['ui.router', 'ngResource', 'ui.bootstrap'])
         controller: 'homeController',
         controllerAs: 'homeCtrl',
         resolve: {
-          activeTabUrl: function(AppState) {
-            return AppState.getActiveTabUrl()
+          domainNotes: function(GetNotes) {
+            console.log('************************************');
+            console.log(GetNotes.getDomainNotes());
+            console.log('************************************');
+            return GetNotes.getDomainNotes()
           },
-          activeTabDomain: function(AppState) {
-            return AppState.getActiveTabDomain()
+          urlNotes: function(GetNotes) {
+            console.log('************************************');
+            console.log(GetNotes.getUrlNotes());
+            console.log('************************************');
+            return GetNotes.getUrlNotes()
+          },
+          viewState: function(AppState) {
+            console.log('************************************');
+            console.log(AppState.getViewState());
+            console.log('************************************');
+            return AppState.getViewState()
           }
         }
       })

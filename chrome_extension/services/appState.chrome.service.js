@@ -6,6 +6,7 @@
     self.activeNote = {};
     self.activeTabUrl = '';
     self.activeTabDomain = '';
+    self.viewState = 'Page';
 
     return {
       setActiveTabUrl: function(url) {
@@ -25,6 +26,12 @@
       },
       getActiveNote: function() {
         return self.activeNote;
+      },
+      setViewState: function(viewState) {
+        self.viewState = viewState
+      },
+      getViewState: function() {
+        return self.viewState;
       }
     }
   }
