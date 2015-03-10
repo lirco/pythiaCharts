@@ -11,16 +11,26 @@
     self.domainNotes = notes.domainNotes;
     self.urlNotes = notes.urlNotes;
 
-    self.switchViewState = function(viewState){
-      AppState.setViewState(viewState);
-      if (viewState == 'Page') {
+    $scope.$on('viewEvent:changeViewState', function(type, data){
+      if (data == 'Page') {
         self.viewState = 'Page';
         self.notesToShow = self.urlNotes;
-      } else if (viewState == 'Site'){
+      } else if (data == 'Site'){
         self.viewState = 'Site';
         self.notesToShow = self.domainNotes;
       }
-    };
+    });
+
+    //self.switchViewState = function(viewState){
+    //  AppState.setViewState(viewState);
+    //  if (viewState == 'Page') {
+    //    self.viewState = 'Page';
+    //    self.notesToShow = self.urlNotes;
+    //  } else if (viewState == 'Site'){
+    //    self.viewState = 'Site';
+    //    self.notesToShow = self.domainNotes;
+    //  }
+    //};
 
     self.defineNotesToShow = function() {
       if (self.viewState == 'Page') {
@@ -29,13 +39,7 @@
         self.notesToShow = self.domainNotes;
       }
     };
-
     self.defineNotesToShow();
-
-    //$scope.$on('viewEvent:changeViewState', function(type, data){
-    //  self.viewState = data;
-    //  self.defineNotesToShow()
-    //});
 
     self.editNote = function(note) {
       AppState.setActiveNote(note);

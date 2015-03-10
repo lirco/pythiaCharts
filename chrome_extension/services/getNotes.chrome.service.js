@@ -30,8 +30,6 @@
     }
   }
 
-
-
   angular.module('drops')
     .service('GetNotes', ['$q','Notes','AppState', getNotes])
 }());

@@ -1,20 +1,32 @@
 <section>
 
 
-  <div class="row" style="display: inline-block">
-    <div class="col-sm-6" style="float: left">
-      <a ng-click="homeCtrl.switchViewState('Page')">Page</a>
+  <!--<div class="row" style="display: inline-block">-->
+    <!--<div class="col-sm-6" style="float: left">-->
+      <!--<a ng-click="homeCtrl.switchViewState('Page')">Page</a>-->
+    <!--</div>-->
+    <!--<div class="col-sm-6" style="float: right">-->
+      <!--<a ng-click="homeCtrl.switchViewState('Site')">Site</a>-->
+    <!--</div>-->
+  <!--</div>-->
+  <div class="ds">
+    <div class="home-header">
+
+      <div class="title-wrap">
+        <h3 ng-if="homeCtrl.notesToShow.length !== 0">Your notes</h3>
+        <h3 ng-if="homeCtrl.notesToShow.length == 0">No notes yet for this page. </h3>
+      </div>
+
+      <div class="plus-wrap">
+        <div class="note-plus">
+          <a ui-sref="newNote" type="button" role="button">
+            <span class="glyphicon glyphicon-plus"></span>
+          </a>
+        </div>
+      </div>
+
     </div>
-    <div class="col-sm-6" style="float: right">
-      <a ng-click="homeCtrl.switchViewState('Site')">Site</a>
-    </div>
-  </div>
-  <div class="col-lg-3 ds">
-    <h3 ng-if="homeCtrl.notesToShow.length !== 0">Your notes</h3>
-    <h3 ng-if="homeCtrl.notesToShow.length == 0">No notes yet for this page. </h3>
-    <a ui-sref="newNote" type="button" role="button">
-      <span class="glyphicon glyphicon-plus"></span>
-    </a>
+
 
     <div ng-repeat="note in homeCtrl.notesToShow">
       <div class="desc">
