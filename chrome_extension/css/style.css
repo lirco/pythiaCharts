@@ -1,146 +1,147 @@
+
+html, body {
+  font-family: 'Open Sans', sans-sarif;
+  width: 280px;
+  height: 470px;
+  overflow: hidden;
+  /* remove below line to remove centered view */
+  margin:  0 auto;
+}
 body {
-  margin-top: 50px;
-  width: 370px;
-  height: 500px;
+  border: 3px solid #666;
 }
-
-/* navbar begins */
-.navbar{
-  height:46px;
+a:hover, a:focus {
+  color: #F6B26B;
+  text-decoration: none;
 }
-.navbar-collapse.collapse {
-  display: block!important;
+/*--------------------------
+| MARGIN HELPER
+--------------------------*/
+.margin-top-15 {
+  margin-top: 15px;
 }
-
-.navbar-nav>li, .navbar-nav {
-  float: left !important;
+.margin-top-20 {
+  margin-top: 20px;
 }
-
-.navbar-nav.navbar-right:last-child {
-  margin-right: -15px !important;
+.margin-top-30 {
+  margin-top: 30px;
 }
-
-.navbar-right {
-  float: right!important;
+/*--------------------------
+| PADDING HELPER
+--------------------------*/
+.padding-15 {
+  padding: 15px;
 }
-
-.navbar-nav .open .dropdown-menu {
-  background-color: #ffffff;
+/*--------------------------
+| FONT HELPER
+--------------------------*/
+.text-bold {
+  font-weight: bold;
 }
-
-.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+.text-deep-blue {
+  color: #45818E;
+}
+.font-18 {
+  font-size: 18px;
+}
+/*--------------------------
+| PANEL
+--------------------------*/
+.panel {
+  border-radius: 0;
+  box-shadow: none;
+}
+.panel-default {
+  background-color: #EEE;
+  border: none;
+}
+.panel-title {
+  font-size: 28px;
+  color: #666;
+}
+.panel-default > .panel-heading {
   background-color: transparent;
+  border-color: transparent;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
-/* navbar ends */
-
-/*popup begins*/
-.popup-content {
-  width: inherit;
-  height: inherit;
-}
-
-.home-header {
-  position: relative;
-  width: 100%;
-  height: 60px;
-  background-color: #ff865c;
+.panel-footer {
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-.home-header .title-wrap {
-  position: relative;
-  width: 80%;
-  height: inherit;
-  float: left;
+.panel-primary {
+  background-color: transparent;
+  border: none;
 }
-
-.home-header h3 {
-  color: #ffffff;
-  font-size: 16px;
-  padding: 0 30px;
-  line-height: 60px;
-  height: 60px;
-  margin: 0;
-  background: #ff865c;
-  text-align: left;
+.panel-title {
+  font-size: 28px;
+  color: #666;
 }
-
-.home-header .plus-wrap {
-  position: relative;
-  height: inherit;
-  width: 20%;
-  float: right;
+.panel-primary > .panel-heading {
+  background-color: #333333;
+  border-color: transparent;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
-
-.note-plus {
-  position: absolute;
-  line-height: 60px;
-  height: 60px;
-  margin: auto;
-  text-align: center;
+.panel-primary > .panel-heading a {
+  color: #fff;
+  font-weight: bold;
 }
-
-.note-plus .glyphicon {
-  color: #ffffff;
-  font-size: 20px;
-  align-self: center;
-  border-radius: 3px;
-  border: 3px solid #ffffff;
-  padding: 5px;
-  vertical-align: middle;
+.panel-primary > .panel-heading a.active {
+  color: #F6B26B;
 }
-
-
-.ds {
-  background: #ffffff;
+.panel-primary > .panel-body {
+  padding: 0;
 }
-
-
-.ds i {
-  font-size: 12px;
-  line-height: 16px;
+/*--------------------------
+| NOTES ITEMS
+--------------------------*/
+.list-group-item {
+  min-height: 100px;
 }
-
-.ds .desc {
-  border-bottom: 1px solid #eaeaea;
-  display: inline-block;
-  padding: 15px 0;
-  width: 100%;
-}
-
-.ds .desc:hover {
-  background: #f2f2f2;
-}
-
-.ds .thumb {
-  width: 30px;
-  margin: 0 10px 0 20px;
+.list-group-item a.note {
   display: block;
-  float: left;
+  text-decoration: none;
+  color: #555;
 }
-
-.ds .thumb-right {
-  width: 30px;
-  margin: 0 10px 0 20px;
-  display: block;
-  float: left;
+.list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
-
-.ds .details {
-  width: 170px;
-  float: left;
+.list-group-item:last-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
 }
-
-.ds > .desc p {
-  font-size: 11px;
+.list-group-item:focus, .list-group-item:hover {
+  background-color: #f5f5f5;
+  color: #555;
+  text-decoration: none;
+  cursor: pointer;
 }
-
-.ds p > muted {
-  font-size: 9px;
-  text-transform: uppercase;
-  font-style: italic;
-  color: #666666
+.list-group-item > .action {
+  text-align: right;
 }
-
-.ds a {
-  color: #68dff0;
+/*--------------------------
+| FORM
+--------------------------*/
+.btn {
+  border-radius: 0;
+}
+.btn-outline {
+  background-color: #fff;
+  color: #F6B26B;
+  border: 2px solid #F6B26B;
+}
+.form-control {
+  border-radius: 0;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+textarea {
+  resize:none;
 }

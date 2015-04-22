@@ -9,10 +9,12 @@
 </head>
 
 <body ng-controller="mainController as mainCtrl">
-  <header data-ng-include="'views/main/header.chrome.view.html'" class="navbar navbar-fixed-top navbar-inverse" data-ng-show="mainCtrl.authentication.user !== null"></header>
-  <section class="content popup-content">
-    <ui-view></ui-view>
-  </section>
+  <div class="panel panel-primary">
+    <!--<header data-ng-include="'views/main/header.chrome.view.html'" data-ng-show="mainCtrl.authentication.user !== null"></header>-->
+    <!--<section>-->
+      <ui-view></ui-view>
+    <!--</section>-->
+  </div>
   <script src="lib/angular/angular.min.js"></script>
   <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="lib/angular-resource/angular-resource.js"></script>

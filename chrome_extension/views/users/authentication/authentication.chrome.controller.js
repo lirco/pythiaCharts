@@ -2,9 +2,12 @@
 
   function authenticationController(http, $state, Authentication) {
 
+    console.log('************************************');
+    console.log('yo');
+    console.log('************************************');
+
     var self = this;
     self.authentication = {};
-
     self.authentication.user = Authentication.getUser();
 
     // If user is signed in then redirect back home
@@ -24,10 +27,16 @@
     };
 
     self.signin = function() {
+      console.log('************************************');
+      console.log('one');
+      console.log('************************************');
       http.post('http://localhost:3000/auth/signin', self.credentials).success(function(response) {
         // If successful we assign the response to the global user model
         Authentication.setUser(response);
         self.authentication.user = Authentication.getUser();
+        console.log('************************************');
+        console.log('two, ' + self.authentication.user);
+        console.log('************************************');
 
         // And redirect to the index page
         $state.go('home');
