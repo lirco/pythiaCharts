@@ -65,7 +65,7 @@
   <div class="panel-heading">
     <div class="pull-left">
       <ul class="list-inline">
-        <li><a href="#" ng-click="headerCtrl.stateChange('Page')">Page</a></li>
+        <li><a href="#" class="active" ng-click="headerCtrl.stateChange('Page')">Page</a></li>
         <li><a href="#" ng-click="headerCtrl.stateChange('Site')">Site</a></li>
       </ul>
     </div>
@@ -114,8 +114,8 @@
         <div class="clearfix"></div>
       </div>
 
-      <div class="list-group" ng-repeat="note in homeCtrl.notesToShow">
-        <div class="list-group-item">
+      <div class="list-group">
+        <div class="list-group-item" ng-repeat="note in homeCtrl.notesToShow">
           <a class="note" href="#">
             <h4 class="list-group-item-heading">{{note.title}}</h4>
             <p class="list-group-item-text small">{{note.content}}</p>
