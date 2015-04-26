@@ -1,30 +1,107 @@
-<section>
-  <div class="page-header">
-    <h1>New Note</h1>
-  </div>
-  <div class="col-md-12">
-    <form name="noteForm" class="form-horizontal" data-ng-submit="notesCtrl.create()" novalidate>
-      <fieldset>
-        <div class="form-group" ng-class="{ 'has-error': articleForm.title.$dirty && articleForm.title.$invalid }">
-          <label class="control-label" for="title">Title</label>
-          <div class="controls">
-            <input name="title" type="text" data-ng-model="notesCtrl.title" id="title" class="form-control" placeholder="Title" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="control-label" for="content">Content</label>
-          <div class="controls">
-            <textarea name="content" data-ng-model="notesCtrl.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
-          </div>
-        </div>
-        <div class="form-group">
-          <input type="submit" class="btn btn-default">
-        </div>
-        <div data-ng-show="notesCtrl.error" class="text-danger">
-          <strong data-ng-bind="notesCtrl.error"></strong>
-        </div>
-      </fieldset>
-    </form>
-  </div>
-</section>
+<!--<section>-->
+  <!--<div class="page-header">-->
+    <!--<h1>New Note</h1>-->
+  <!--</div>-->
+  <!--<div class="col-md-12">-->
+    <!--<form name="noteForm" class="form-horizontal" data-ng-submit="notesCtrl.create()" novalidate>-->
+      <!--<fieldset>-->
+        <!--<div class="form-group" ng-class="{ 'has-error': articleForm.title.$dirty && articleForm.title.$invalid }">-->
+          <!--<label class="control-label" for="title">Title</label>-->
+          <!--<div class="controls">-->
+            <!--<input name="title" type="text" data-ng-model="notesCtrl.title" id="title" class="form-control" placeholder="Title" required>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+          <!--<label class="control-label" for="content">Content</label>-->
+          <!--<div class="controls">-->
+            <!--<textarea name="content" data-ng-model="notesCtrl.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+          <!--<input type="submit" class="btn btn-default">-->
+        <!--</div>-->
+        <!--<div data-ng-show="notesCtrl.error" class="text-danger">-->
+          <!--<strong data-ng-bind="notesCtrl.error"></strong>-->
+        <!--</div>-->
+      <!--</fieldset>-->
+    <!--</form>-->
+  <!--</div>-->
+<!--</section>-->
 
+
+
+<div class="panel panel-primary">
+
+  <div class="panel-heading" data-ng-controller="HeaderController as headerCtrl">
+    <div class="pull-left">
+      <ul class="list-inline">
+        <li><a href="#" class="active" ng-click="headerCtrl.stateChange('Page')">Page</a></li>
+        <li><a href="#" ng-click="headerCtrl.stateChange('Site')">Site</a></li>
+      </ul>
+    </div>
+    <div class="pull-right">
+      <ul class="list-inline">
+        <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+        <!--settings dropdown-->
+        <li class="btn-group" dropdown is-open="headerCtrl.status.isopen">
+          <a type="button" role="button" class="dropdown-toggle" dropdown-toggle ng-disabled="disabled" ng-click="headerCtrl.toggleDropdown($event)">
+            <span class="glyphicon glyphicon-cog"></span></a>
+          </a>
+          <ul class="dropdown-menu dropdown-toggle" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a ng-click="headerCtrl.signOut()">Signout</a></li>
+          </ul>
+        </li><!-- /.settings dropdown-->
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+  <form name="noteForm" data-ng-submit="notesCtrl.create()" novalidate class="margin-top-20" accept-charset="utf-8">
+    <div class="panel-body">
+
+      <div class="form-group" ng-class="{ 'has-error': articleForm.title.$dirty && articleForm.title.$invalid }">
+        <div class="controls">
+          <input name="title" type="text" data-ng-model="notesCtrl.title" id="title" class="form-control input-lg" placeholder="Title" required>
+        </div>
+      </div>
+
+      <!--<div class="form-group">-->
+        <!--<input type="text" class="form-control input-lg" id="title" name="title" placeholder="Title">-->
+      <!--</div>-->
+
+      <div class="form-group">
+        <textarea name="content" data-ng-model="notesCtrl.content" id="content" class="form-control" rows="7" placeholder="Your notes here"></textarea>
+      </div>
+
+      <!--<div class="form-group">-->
+        <!--<textarea class="form-control" name="note" id="note" placeholder="Your note here" rows="7"></textarea>-->
+      <!--</div>-->
+
+      <div class="form-group">
+        <input type="text" class="form-control" id="tags" name="tags" placeholder="#tags">
+      </div>
+
+    </div>
+
+    <div class="panel-footer">
+
+      <div class="pull-left">
+        <button class="btn btn-default">Cancel</button>
+      </div>
+
+      <!--<div class="form-group">-->
+        <!--<input type="submit" class="btn btn-default">-->
+      <!--</div>-->
+
+      <div class="pull-right">
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+      <div class="clearfix"></div>
+
+    </div>
+  </form>
+</div>

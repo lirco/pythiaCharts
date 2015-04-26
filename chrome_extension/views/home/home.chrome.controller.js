@@ -46,6 +46,10 @@
       $state.go('editNote')
     };
 
+    self.newNote = function() {
+      $state.go('newNote');
+    }
+
     self.deleteNote = function(note) {
       note.$remove();
 

@@ -1,5 +1,5 @@
-<div class="panel panel-primary" data-ng-controller="HeaderController as headerCtrl">
-  <div class="panel-heading">
+<div class="panel panel-primary">
+  <div class="panel-heading" data-ng-controller="HeaderController as headerCtrl">
     <div class="pull-left">
       <ul class="list-inline">
         <li><a href="#" class="active" ng-click="headerCtrl.stateChange('Page')">Page</a></li>
@@ -29,14 +29,12 @@
 
   <div class="panel-body">
     <div ng-if="homeCtrl.notesToShow.length == 0">
-      <div class="no-notes">
-        <h1>
-          Hi {{homeCtrl.authentication.user.username}}!
-          <br>
-          <h2>No notes yet for this page</h2>
-          <br>
-          <span> <a ui-sref="newNote">drop one</a></span>
-        </h1>
+      <div class="panel-body">
+        <h2 class="text-center">Hey {{homeCtrl.authentication.user.username}}!</h2>
+        <br>
+        <h3 class="text-center">No notes yet for this page</h3>
+        <br>
+        <button class="btn btn-block btn-primary margin-auto" ng-click="homeCtrl.newNote()">drop one</button>
       </div>
     </div>
 
@@ -46,7 +44,7 @@
           <h4 class="text-bold text-deep-blue">{{homeCtrl.authentication.user.username}}'s notes</h4>
         </div>
         <div class="pull-right">
-          <button class="btn btn-sm btn-outline"><span class="glyphicon glyphicon-plus"></span></button>
+          <button ng-click="homeCtrl.newNote()" class="btn btn-sm btn-outline"><span class="glyphicon glyphicon-plus"></span></button>
         </div>
         <div class="clearfix"></div>
       </div>
