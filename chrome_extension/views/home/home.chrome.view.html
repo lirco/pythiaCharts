@@ -50,13 +50,13 @@
       </div>
 
       <div class="list-group">
-        <div class="list-group-item" ng-repeat="note in homeCtrl.notesToShow">
+        <div class="list-group-item" ng-repeat="note in homeCtrl.notesToShow" ng-mouseenter="homeCtrl.noteHover(note)" ng-mouseleave="homeCtrl.noteHover(note)">
           <a class="note" href="#">
             <h4 class="list-group-item-heading">{{note.title}}</h4>
             <p class="list-group-item-text small">{{note.content}}</p>
           </a>
-          <div class="action hidden">
-            <a href="#" class="text-danger" ng-click="homeCtrl.deleteNote(note)">delete</a> &nbsp; <a href="#" ng-click="homeCtrl.editNote(note)">edit</a>
+          <div class="action" ng-show="note.showHidden">
+            <a class="text-danger" ng-click="homeCtrl.deleteNote(note)">delete</a> &nbsp; <a ng-click="homeCtrl.editNote(note)">edit</a>
           </div>
         </div>
       </div>

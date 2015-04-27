@@ -48,7 +48,7 @@
 
     self.newNote = function() {
       $state.go('newNote');
-    }
+    };
 
     self.deleteNote = function(note) {
       note.$remove();
@@ -63,6 +63,10 @@
       }
       self.defineNotesToShow();
     };
+
+    self.noteHover = function(note) {
+      return note.showHidden = !note.showHidden;
+    }
   }
 
   angular.module('drops')
