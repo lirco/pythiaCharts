@@ -99,6 +99,10 @@ a:hover, a:focus {
 .panel-primary > .panel-body {
   padding: 0;
 }
+.panel-primary > .panel-heading .dropdown-menu a {
+  color: black;
+  font-weight: bold;
+}
 /*--------------------------
 | NOTES ITEMS
 --------------------------*/
