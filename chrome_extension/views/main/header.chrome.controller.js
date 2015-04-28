@@ -7,8 +7,11 @@
     var self = this;
     self.authentication = {};
     self.authentication.user = Authentication.getUser();
+    self.viewState = AppState.getViewState();
 
     self.stateChange = function(state) {
+      AppState.setViewState(state);
+      self.viewState = state;
       $scope.$emit('dropsAppEvent','viewEvent:changeViewState', state);
     };
 

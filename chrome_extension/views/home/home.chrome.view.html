@@ -2,8 +2,8 @@
   <div class="panel-heading" data-ng-controller="HeaderController as headerCtrl">
     <div class="pull-left">
       <ul class="list-inline">
-        <li><a href="#" class="active" ng-click="headerCtrl.stateChange('Page')">Page</a></li>
-        <li><a href="#" ng-click="headerCtrl.stateChange('Site')">Site</a></li>
+        <li><a ng-class="{active : headerCtrl.viewState=='Page' }" ng-click="headerCtrl.stateChange('Page')">Page</a></li>
+        <li><a ng-class="{active : headerCtrl.viewState=='Site' }" ng-click="headerCtrl.stateChange('Site')">Site</a></li>
       </ul>
     </div>
     <div class="pull-right">
