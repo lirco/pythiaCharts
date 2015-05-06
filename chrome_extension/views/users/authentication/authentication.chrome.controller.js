@@ -35,6 +35,9 @@
       });
     };
 
+    self.goToAuthProvider = function (name) {
+      chrome.tabs.create({"url": "http://localhost:3000/auth/" + name });
+    }
   }
 
   angular.module('drops')
