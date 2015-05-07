@@ -15,17 +15,14 @@
       <div class="form-group">
         <input type="password" class="form-control" id="password" name="password" data-ng-model="authCtrl.credentials.password" placeholder="Password">
       </div>
-      <!--<div class="form-group">-->
-        <!--<input type="password" class="form-control" id="password-verify" name="password-verify" data-ng-model="authCtrl.credentials.password-verify" placeholder="Retype password">-->
-      <!--</div>-->
       <div class="form-group">
         <button type="submit" class="btn btn-block btn-primary">Sign Up</button>
       </div>
       <div class="form-group">
         <ul class="list-inline text-center">
           <li>or via</li>
-          <li><a href="#"><img src="../../../icons/facebook.png" alt="" style="width:40px"></a></li>
-          <li><a href="#"><img src="../../../icons/g+.png" alt="" style="width:40px"></a></li>
+          <li><a href="#" ng-click="authCtrl.goToAuthProvider('facebook')"><img src="../../../icons/facebook.png" alt="" style="width:40px"></a></li>
+          <li><a href="#" ng-click="authCtrl.goToAuthProvider('google')"><img src="../../../icons/g+.png" alt="" style="width:40px"></a></li>
         </ul>
       </div>
     </form>
