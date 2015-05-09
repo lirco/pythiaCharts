@@ -32,7 +32,7 @@
   <form name="noteForm" data-ng-submit="notesCtrl.update()" novalidate class="margin-top-20" accept-charset="utf-8">
 
     <div class="panel-body">
-      <div class="form-group" ng-class="{ 'has-error': articleForm.title.$dirty && articleForm.title.$invalid }">
+      <div class="form-group">
         <div class="controls">
           <input name="title" type="text" data-ng-model="notesCtrl.activeNote.title" id="title" class="form-control input-lg" placeholder="Title" required>
         </div>
