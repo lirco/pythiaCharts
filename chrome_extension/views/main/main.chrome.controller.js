@@ -17,6 +17,7 @@
       var uri = tabs[0].url;
       var domainArray = uri.match(/^[\w-]+:\/*\[?([\w\.:-]+)\]?(?::\d+)?/)[1].split(".");
 
+
       if (domainArray.length == 2) {
         domain = domainArray.join('.');
       }
