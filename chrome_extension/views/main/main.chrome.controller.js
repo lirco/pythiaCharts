@@ -23,7 +23,6 @@
       else {
         domain = domainArray.splice(1).join('.');
       }
-      
       self.activeTabUrl = uri;
       AppState.setActiveTabUrl(uri);
       AppState.setActiveTabDomain(domain);
