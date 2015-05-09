@@ -7,10 +7,9 @@ var mongoose = require('mongoose'),
     _ = require('lodash');
 
 exports.chromeIndex = function(req, res) {
-  if (req.user && req.user!==null) {
+  if (req.user) {
     res.send({
       user: req.user
-      //here I should also send the notes on current user's url
     });
   } else {
     res.send({

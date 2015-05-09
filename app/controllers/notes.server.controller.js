@@ -78,7 +78,7 @@ exports.list = function(req, res) {
     var query = {};
     query[qKey] = qValue;
     query['user'] = req.user._id;
-    Note.find(query).sort('-created').populate('user', 'displayName').exec(function(err, notes) {
+    Note.find(query).sort('-created').populate('user', 'username').exec(function(err, notes) {
       if (err) {
         return res.status(400).send({
           message: errorHandler.getErrorMessage(err)
