@@ -48,4 +48,9 @@ var NoteSchema = new Schema({
   }
 });
 
+NoteSchema.pre('save', function(next) {
+  this.modified = Date.now();
+  next();
+});
+
 mongoose.model('Note', NoteSchema);
