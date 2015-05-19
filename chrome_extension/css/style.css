@@ -109,6 +109,10 @@ a:hover, a:focus {
 /*--------------------------
 | NOTES ITEMS
 --------------------------*/
+.list-group {
+  overflow: scroll;
+}
+
 .list-group-item {
   min-height: 100px;
 }

@@ -38,11 +38,12 @@
         </div>
       </div>
       <div class="form-group">
-        <textarea name="content" data-ng-model="notesCtrl.activeNote.content" id="content" class="form-control" rows="10" placeholder="Your notes here"></textarea>
+        <textarea name="content" data-ng-model="notesCtrl.activeNote.content" id="content" class="form-control" rows="7" placeholder="Your notes here"></textarea>
       </div>
       <!--<div class="form-group">-->
         <!--<input type="text" class="form-control" data-ng-model="notesCtrl.activeNote.tags" id="tags" name="tags" placeholder="#tags">-->
       <!--</div>-->
+      <tags-input data-ng-model="notesCtrl.activeNote.tags"></tags-input>
     </div>
 
     <div class="panel-footer">
