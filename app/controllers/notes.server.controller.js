@@ -63,7 +63,22 @@ exports.read = function(req, res) {
  */
 exports.update = function(req, res) {
   var note = req.note;
+  var user = req.user;
+  var newTags = req.body.tags;
 
+  for (var i = 0; i < newTags.length ; i++) {
+    var newTag = newTags[i];
+    var index = -1;
+    for (var j = 0; j < user.tags.length ; j++) {
+      if (user.tags[j].text == newTag.text) {
+        index = j;
+        break;
+      }
+    }
+    if (index == -1) {
+      user.tags.push(newTag);
+    }
+  }
   note = _.extend(note, req.body);
 
   note.save(function(err) {
@@ -72,7 +87,15 @@ exports.update = function(req, res) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(note);
+      user.save(function(err) {
+        if (err) {
+          return res.status(400).send({
+            message: errorHandler.getErrorMessage(err)
+          });
+        } else {
+          res.jsonp(note);
+        }
+      })
     }
   });
 };
