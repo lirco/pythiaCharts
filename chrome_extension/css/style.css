@@ -110,7 +110,12 @@ a:hover, a:focus {
 | NOTES ITEMS
 --------------------------*/
 .list-group {
-  overflow: scroll;
+  overflow-y: scroll;
+  height: 300px;
+}
+
+.list-group::-webkit-scrollbar {
+  display: none;
 }
 
 .list-group-item {
