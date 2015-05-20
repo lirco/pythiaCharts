@@ -14,6 +14,23 @@ var mongoose = require('mongoose'),
 exports.create = function(req, res) {
   var note = new Note(req.body);
   note.user = req.user;
+  var user = req.user;
+  
+  var newTags = req.body.tags;
+
+  for (var i = 0; i < newTags.length ; i++) {
+    var newTag = newTags[i];
+    var index = -1;
+    for (var j = 0; j < user.tags.length ; j++) {
+      if (user.tags[j].text == newTag.text) {
+        index = j;
+        break;
+      }
+    }
+    if (index == -1) {
+      user.tags.push(newTag);
+    }
+  }
 
   note.save(function(err) {
     if (err) {
@@ -21,7 +38,15 @@ exports.create = function(req, res) {
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(note);
+      user.save(function(err) {
+        if (err) {
+          return res.status(400).send({
+            message: errorHandler.getErrorMessage(err)
+          });
+        } else {
+          res.jsonp(note);
+        }
+      })
     }
   });
 };
