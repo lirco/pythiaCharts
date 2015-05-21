@@ -1,86 +1,21 @@
-<!--<div class="container" data-ng-controller="HeaderController as headerCtrl">-->
-  <!--<nav class="navbar navbar-inverse">-->
-    <!--<div class="container-fluid">-->
-
-      <!--&lt;!&ndash;left side of navbar&ndash;&gt;-->
-      <!--<ul class="nav navbar-nav">-->
-        <!--<li><a href="#" ng-click="headerCtrl.stateChange('Page')">Page</a></li>-->
-        <!--<li><a href="#" ng-click="headerCtrl.stateChange('Site')">Site</a></li>-->
-      <!--</ul>-->
-
-      <!--&lt;!&ndash;navbar-right&ndash;&gt;-->
-      <!--<ul class="nav navbar-nav navbar-right">-->
-        <!--<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>-->
-        <!--&lt;!&ndash;settings dropdown&ndash;&gt;-->
-        <!--<li class="btn-group" dropdown is-open="headerCtrl.status.isopen">-->
-          <!--<a type="button" role="button" class="dropdown-toggle" dropdown-toggle ng-disabled="disabled" ng-click="headerCtrl.toggleDropdown($event)">-->
-            <!--<span class="glyphicon glyphicon-cog"></span></a>-->
-          <!--</a>-->
-          <!--<ul class="dropdown-menu dropdown-toggle" role="menu">-->
-            <!--<li><a href="#">Action</a></li>-->
-            <!--<li><a href="#">Another action</a></li>-->
-            <!--<li><a href="#">Something else here</a></li>-->
-            <!--<li class="divider"></li>-->
-            <!--<li><a ng-click="headerCtrl.signOut()">Signout</a></li>-->
-          <!--</ul>-->
-        <!--</li>&lt;!&ndash; /.settings dropdown&ndash;&gt;-->
-      <!--</ul>-->
-    <!--</div>&lt;!&ndash; /.container-fluid &ndash;&gt;-->
-  <!--</nav>-->
-<!--</div>-->
-
-
-
-<!--<div class="container" data-ng-controller="HeaderController as headerCtrl">-->
-  <!--<div class="panel-heading">-->
-    <!--<div class="pull-left">-->
-      <!--<ul class="list-inline">-->
-        <!--<li><a href="#" ng-click="headerCtrl.stateChange('Page')">Page</a></li>-->
-        <!--<li><a href="#" ng-click="headerCtrl.stateChange('Site')">Site</a></li>-->
-      <!--</ul>-->
-    <!--</div>-->
-    <!--<div class="pull-right">-->
-      <!--<ul class="list-inline">-->
-        <!--<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>-->
-        <!--&lt;!&ndash;settings dropdown&ndash;&gt;-->
-        <!--<li class="btn-group" dropdown is-open="headerCtrl.status.isopen">-->
-          <!--<a type="button" role="button" class="dropdown-toggle" dropdown-toggle ng-disabled="disabled" ng-click="headerCtrl.toggleDropdown($event)">-->
-            <!--<span class="glyphicon glyphicon-cog"></span></a>-->
-          <!--</a>-->
-          <!--<ul class="dropdown-menu dropdown-toggle" role="menu">-->
-            <!--<li><a href="#">Action</a></li>-->
-            <!--<li><a href="#">Another action</a></li>-->
-            <!--<li><a href="#">Something else here</a></li>-->
-            <!--<li class="divider"></li>-->
-            <!--<li><a ng-click="headerCtrl.signOut()">Signout</a></li>-->
-          <!--</ul>-->
-        <!--</li>&lt;!&ndash; /.settings dropdown&ndash;&gt;-->
-      <!--</ul>-->
-    <!--</div>-->
-    <!--<div class="clearfix"></div>-->
-  <!--</div>-->
-<!--</div>-->
-
-
-<div class="panel-heading">
+<div class="panel-heading" data-ng-controller="HeaderController as headerCtrl">
   <div class="pull-left">
     <ul class="list-inline">
-      <li><a href="#" class="active" ng-click="headerCtrl.stateChange('Page')">Page</a></li>
-      <li><a href="#" ng-click="headerCtrl.stateChange('Site')">Site</a></li>
+      <li><a ng-class="{active : headerCtrl.viewState=='Page' }" ng-click="headerCtrl.stateChange('Page')">Page</a></li>
+      <li><a ng-class="{active : headerCtrl.viewState=='Site' }" ng-click="headerCtrl.stateChange('Site')">Site</a></li>
     </ul>
   </div>
   <div class="pull-right">
     <ul class="list-inline">
-      <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+      <li><a href="http://www.google.com"><span class="glyphicon glyphicon-home"></span></a></li>
       <!--settings dropdown-->
       <li class="btn-group" dropdown is-open="headerCtrl.status.isopen">
         <a type="button" role="button" class="dropdown-toggle" dropdown-toggle ng-disabled="disabled" ng-click="headerCtrl.toggleDropdown($event)">
           <span class="glyphicon glyphicon-cog"></span></a>
         </a>
-        <ul class="dropdown-menu dropdown-toggle" role="menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
+        <ul class="dropdown-menu margin-right-minus-130" role="menu">
+          <li><a >Action</a></li>
+          <li><a >Another action</a></li>
           <li class="divider"></li>
           <li><a ng-click="headerCtrl.signOut()">Signout</a></li>
         </ul>

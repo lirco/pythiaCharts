@@ -65,7 +65,7 @@ a:hover, a:focus {
   font-size: 28px;
   color: #666;
 }
-.panel-default > .panel-heading {
+.panel-default  .panel-heading {
   background-color: transparent;
   border-color: transparent;
   border-top-left-radius: 0;
@@ -86,17 +86,21 @@ a:hover, a:focus {
   font-size: 28px;
   color: #666;
 }
-.panel-primary > .panel-heading {
+.panel-primary .panel-heading {
   background-color: #333333;
   border-color: transparent;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.panel-primary > .panel-heading a {
+.panel-primary .panel-heading a {
   color: #fff;
   font-weight: bold;
 }
-.panel-primary > .panel-heading a.active {
+.panel-primary .panel-heading .dropdown-menu a {
+  color: black;
+  font-weight: bold;
+}
+.panel-primary .panel-heading a.active {
   color: #F6B26B;
 }
 .panel-primary > .panel-body {
