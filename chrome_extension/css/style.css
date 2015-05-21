@@ -9,6 +9,7 @@ html, body {
 }
 body {
   border: 3px solid #666;
+  background-color: #F5F7FA ;
 }
 a:hover, a:focus {
   color: #F6B26B;
