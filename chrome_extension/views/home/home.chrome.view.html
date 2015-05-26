@@ -27,8 +27,8 @@
       <div class="list-group">
         <div class="list-group-item" ng-repeat="note in homeCtrl.notesToShow" ng-click="homeCtrl.editNote(note)" ng-mouseenter="homeCtrl.noteHover(note)" ng-mouseleave="homeCtrl.noteHover(note)">
           <a class="note" href="#">
-            <h5 class="list-group-item-heading">{{note.title}}</h5>
-            <p class="list-group-item-text small">{{note.content}}</p>
+            <h5 class="list-group-item-heading">{{note.title | truncate:7}}</h5>
+            <p class="list-group-item-text small">{{note.content | truncate:16}}</p>
           </a>
           <div class="action" ng-show="note.showHidden">
             <a class="text-danger" ng-click="homeCtrl.deleteNote(note)">
