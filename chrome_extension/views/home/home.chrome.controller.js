@@ -66,6 +66,12 @@
 
     self.noteHover = function(note) {
       return note.showHidden = !note.showHidden;
+    };
+
+    self.goToPage = function(note) {
+      chrome.tabs.update({
+        url: note.url
+      });
     }
   }
 

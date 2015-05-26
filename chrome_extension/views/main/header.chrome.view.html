@@ -7,11 +7,15 @@
   </div>
   <div class="pull-right">
     <ul class="list-inline">
-      <li><a href="http://www.google.com"><span class="glyphicon glyphicon-home"></span></a></li>
+      <li>
+        <a ng-click="headerCtrl.goHome()">
+          <span class="glyphicon glyphicon-home"></span>
+        </a>
+      </li>
       <!--settings dropdown-->
       <li class="btn-group" dropdown is-open="headerCtrl.status.isopen">
         <a type="button" role="button" class="dropdown-toggle" dropdown-toggle ng-disabled="disabled" ng-click="headerCtrl.toggleDropdown($event)">
-          <span class="glyphicon glyphicon-cog"></span></a>
+          <span class="glyphicon glyphicon-cog"></span>
         </a>
         <ul class="dropdown-menu margin-right-minus-130" role="menu">
           <li><a >Action</a></li>

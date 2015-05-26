@@ -31,7 +31,12 @@
             <p class="list-group-item-text small">{{note.content}}</p>
           </a>
           <div class="action" ng-show="note.showHidden">
-            <a class="text-danger" ng-click="homeCtrl.deleteNote(note)">delete</a>
+            <a class="text-danger" ng-click="homeCtrl.deleteNote(note)">
+              <span class="glyphicon glyphicon-trash"></span>
+            </a>
+            <a class="text-info" ng-click="homeCtrl.goToPage(note)">
+              <span class="glyphicon glyphicon-new-window"></span>
+            </a>
             <!--<a class="text-danger" ng-click="homeCtrl.deleteNote(note)">delete</a> &nbsp; <a ng-click="homeCtrl.editNote(note)">edit</a>-->
           </div>
         </div>

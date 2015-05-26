@@ -68,8 +68,7 @@
 
     self.getTags = function(query) {
       var d = $q.defer();
-      var allTags = self.authentication.user.tags;
-      var matchingTags = allTags.filter(function(tag) {
+      var matchingTags = self.authentication.user.tags.filter(function(tag) {
         return tag.text.toLowerCase().indexOf(query.toLowerCase()) != -1;
       });
       d.resolve(matchingTags);

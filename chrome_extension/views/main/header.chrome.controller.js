@@ -37,6 +37,13 @@
           $state.go('signIn');
         });
     }
+
+    self.goHome = function() {
+      chrome.tabs.update({
+        url: 'http://localhost:3000/'
+      });
+    }
+
   }
 
   angular.module('drops')
