@@ -2,7 +2,7 @@
 
 (function () {
 
-  function notesController($stateParams, $state, Authentication, Notes, activeTabUrl, activeTabDomain, activeNote) {
+  function notesController($stateParams, $state, Authentication, Notes, $q, activeTabUrl, activeTabDomain, activeNote) {
     var self = this;
     self.authentication = {};
     self.authentication.user = Authentication.getUser();
@@ -66,9 +66,19 @@
       });
     };
 
+    self.getTags = function(query) {
+      var d = $q.defer();
+      var allTags = self.authentication.user.tags;
+      var matchingTags = allTags.filter(function(tag) {
+        return tag.text.toLowerCase().indexOf(query.toLowerCase()) != -1;
+      });
+      d.resolve(matchingTags);
+      return d.promise
+    }
+
   }
 
   angular.module('drops')
-    .controller('notesController', ['$stateParams', '$state', 'Authentication', 'Notes', 'activeTabUrl', 'activeTabDomain', 'activeNote', notesController])
+    .controller('notesController', ['$stateParams', '$state', 'Authentication', 'Notes', '$q', 'activeTabUrl', 'activeTabDomain', 'activeNote', notesController])
 
 }());
