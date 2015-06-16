@@ -2,7 +2,7 @@
 
 (function () {
 
-  function notesController($stateParams, $state, Authentication, Notes, $q, activeTabUrl, activeTabDomain, activeNote) {
+  function notesController($stateParams, $state, Authentication, Notes, $q, AppState, activeTabUrl, activeTabDomain, activeNote) {
     var self = this;
     self.authentication = {};
     self.authentication.user = Authentication.getUser();
@@ -78,6 +78,6 @@
   }
 
   angular.module('drops')
-    .controller('notesController', ['$stateParams', '$state', 'Authentication', 'Notes', '$q', 'activeTabUrl', 'activeTabDomain', 'activeNote', notesController])
+    .controller('notesController', ['$stateParams', '$state', 'Authentication', 'Notes', '$q', 'AppState', 'activeTabUrl', 'activeTabDomain', 'activeNote', notesController])
 
 }());
