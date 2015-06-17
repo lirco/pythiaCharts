@@ -2,12 +2,13 @@
 
   function sidebarController(scope) {
 
-    scope.tags = [
-      {text:'tag1'},
-      {text:'tag2'},
-      {text:'tag3'},
-      {text:'tag4'}
-    ]
+    var self = this;
+
+    self.click = function(tag) {
+      console.log('***************************************');
+      console.log('the tag ' + tag.text + ' was clicked!');
+      console.log('***************************************');
+    }
 
   }
 
