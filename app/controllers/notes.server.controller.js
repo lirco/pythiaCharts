@@ -15,6 +15,15 @@ exports.create = function(req, res) {
   var note = new Note(req.body);
   note.user = req.user;
   var user = req.user;
+
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
   
   var newTags = req.body.tags;
 
@@ -28,6 +37,7 @@ exports.create = function(req, res) {
       }
     }
     if (index == -1) {
+      newTag.color = getRandomColor();
       user.tags.push(newTag);
     }
   }
@@ -66,6 +76,15 @@ exports.update = function(req, res) {
   var user = req.user;
   var newTags = req.body.tags;
 
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
   for (var i = 0; i < newTags.length ; i++) {
     var newTag = newTags[i];
     var index = -1;
@@ -76,6 +95,7 @@ exports.update = function(req, res) {
       }
     }
     if (index == -1) {
+      newTag.color = getRandomColor();
       user.tags.push(newTag);
     }
   }

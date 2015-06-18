@@ -10,8 +10,9 @@
 					<!--Close Sidenav Left-->
 				<!--</md-button>-->
 
+
 				<md-chips ng-model="homeCtrl.tags" readonly="true">
-					<md-chip-template ng-click="sidebarCtrl.click($chip)">
+					<md-chip-template ng-click="sidebarCtrl.click($chip)" style="color:{{$chip.color}}">
         		<span layout="row">
           		<strong>{{$chip.text}}</strong>
         		</span>
