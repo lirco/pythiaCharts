@@ -1,41 +1,93 @@
-
-
 <div data-ng-controller="homeController as homeCtrl" layout="column" flex>
-	<section layout="row" flex>
-
-		<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" flex>
-			<md-content layout-padding data-ng-controller="sidebarController as sidebarCtrl">
-
-				<!--<md-button ng-click="sidebarCtrl.close()" class="md-primary" hide-gt-md>-->
-					<!--Close Sidenav Left-->
-				<!--</md-button>-->
+  <section layout="row" flex>
 
 
-				<md-chips ng-model="homeCtrl.tags" readonly="true">
-					<md-chip-template ng-click="homeCtrl.click($chip)" style="color:{{$chip.color}}">
-        		<span layout="row">
-          		<strong>{{$chip.text}}</strong>
-        		</span>
-					</md-chip-template>
-				</md-chips>
 
-			</md-content>
-		</md-sidenav>
 
-		<md-content flex layout-padding>
-			<div layout="column" layout-fill layout-align="top center">
-				<md-list>
-					<md-list-item ng-repeat="note in homeCtrl.notes |
-						orderBy:homeCtrl.sortOrder">
-						<span>
-							<p>{{note}}</p>
-						</span>
-					</md-list-item>
-				</md-list>
-				<div>
-			</div>
-			<div flex></div>
-		</md-content>
+      <md-content class="md-padding">
+        <md-tabs md-dynamic-height md-border-bottom>
+          <md-tab label="KPIs" flex>
+            <md-content class="md-padding">
+              <h1 class="md-display-2">Pythia KPIs</h1>
 
-	</section>
+              <md-content flex layout-padding>
+                <div id="demo">
+                  <!-- Responsive table starts here -->
+                  <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+                  <div class="table-responsive-vertical shadow-z-1">
+                    <!-- Table starts here -->
+                    <table id="table" class="table table-hover table-mc-light-blue table-striped">
+                      <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Start</th>
+                        <th>Actions</th>
+                        <th>Volume</th>
+                        <th>Commission</th>
+                        <th>Pending</th>
+                        <th>Diff</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td data-title="ID">1</td>
+                        <td data-title="DATE">20-05-2015</td>
+                        <td data-title="Start">10000</td>
+                        <td data-title="Actions">2</td>
+                        <td data-title="Volume">900</td>
+                        <td data-title="Commission">10</td>
+                        <td data-title="Pending">1</td>
+                        <td data-title="Diff">90</td>
+                      </tr>
+                      <tr>
+                        <td data-title="ID">1</td>
+                        <td data-title="DATE">20-05-2015</td>
+                        <td data-title="Start">10000</td>
+                        <td data-title="Actions">2</td>
+                        <td data-title="Volume">900</td>
+                        <td data-title="Commission">10</td>
+                        <td data-title="Pending">1</td>
+                        <td data-title="Diff">90</td>
+                      </tr>
+                      <tr>
+                        <td data-title="ID">1</td>
+                        <td data-title="DATE">20-05-2015</td>
+                        <td data-title="Start">10000</td>
+                        <td data-title="Actions">2</td>
+                        <td data-title="Volume">900</td>
+                        <td data-title="Commission">10</td>
+                        <td data-title="Pending">1</td>
+                        <td data-title="Diff">90</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </md-content>
+            </md-content>
+          </md-tab>
+          <md-tab label="Chart">
+            <md-content class="md-padding">
+              <h1 class="md-display-2">Pythia Chart</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+              <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+              <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+            </md-content>
+          </md-tab>
+          <md-tab label="configs">
+            <md-content class="md-padding">
+              <h1 class="md-display-2">Pythia Configs</h1>
+              <p>This is the place where we will be able to control the configs of the project</p>
+            </md-content>
+          </md-tab>
+        </md-tabs>
+      </md-content>
+
+  </section>
 </div>
+
+
+
+
+
