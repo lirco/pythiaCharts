@@ -57,9 +57,9 @@
 
             renderTimeout = $timeout(function() {
               var width = d3.select(ele[0])[0][0].offsetWidth - margin,
-                height = scope.data.length * (barHeight + barPadding),
-                color = d3.scale.category20(),
-                xScale = d3.scale.linear()
+                  height = scope.data.length * (barHeight + barPadding),
+                  color = d3.scale.category20(),
+                  xScale = d3.scale.linear()
                   .domain([0, d3.max(data, function(d) {
                     return d.score;
                   })])

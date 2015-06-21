@@ -13,11 +13,6 @@
 .ng-valid.ng-dirty{
     border-color:#78FA89;
 }
-
-/* =============================== CSS for table ===========================*/
-/* =========== taken from http://codepen.io/zavoloklom/pen/IGkDz ============*/
-
-
 .table-striped.table-mc-light-blue > tbody > tr:nth-child(odd) > td,
 .table-striped.table-mc-light-blue > tbody > tr:nth-child(odd) > th {
 	background-color: #e1f5fe;
@@ -39,7 +34,3 @@
 		background-color: #b3e5fc;
 	}
 }
-
-
-/* =============================== END OF CSS for table ===========================*/
-/* ================================================================================*/

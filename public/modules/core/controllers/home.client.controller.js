@@ -1,39 +1,25 @@
 'use strict';
 
-
-
 (function () {
 
-	function homeController(Authentication, Notes) {
+	function homeController() {
 
 		var self = this;
-		var selectedTags = [];
-		self.authentication = Authentication;
-		self.notes = Notes.query();
 
-		self.tags = self.authentication.user.tags;
+		self.data = [
+			{name: "Greg", score: 98},
+			{name: "Ari", score: 96},
+			{name: 'Q', score: 75},
+			{name: "Loser", score: 48}
+		];
 
-		self.click = function(tag) {
-			var index = -1;
-			for (var i=0; i < selectedTags.length ; i++) {
-				if (selectedTags[i] == tag) {
-					index = i;
-					break;
-				}
-			}
-			if (index == -1) {
-				selectedTags.push(tag)
-			} else {
-				selectedTags.splice(index,1);
-			}
-		};
-
-		self.sortOrder = ['-modified'];
-		//self.byTagsFilter =
+		//self.data2 = [
+		//	{city: "DE" , 59319,99496,47414,84464,230183,230528,121688
+		//]
 
 	}
 
 	angular.module('core')
-		.controller('homeController', ['Authentication', 'Notes', homeController])
+		.controller('homeController', [homeController])
 
 }());
